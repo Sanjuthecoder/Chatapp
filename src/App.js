@@ -3,39 +3,38 @@ import ChatProvider from "./store/ChatProvider";
 import { DashboardRoute } from "./Layout/Dashboard/DashboardRoute";
 import { General } from "./Layout/Auth/General";
 import { PublicRoute } from "./Component/Protected/PublicRoute";
-import { ProtectedRoute } from "./Component/Protected/ProtectedRoute";
-import { Login } from "./pages/Auth/Login";
-import { SignUp } from "./pages/Auth/SignUp";
+// import { ProtectedRoute } from "./Component/Protected/ProtectedRoute";
+// import { Login } from "./pages/Auth/Login";
+// import { SignUp } from "./pages/Auth/SignUp";
 import { Paper } from "@mui/material";
 import { Group } from "./Layout/Dashboard/Group";
-import io from 'socket.io-client'
-import { useSelector } from "react-redux";
+// import io from 'socket.io-client'
+// import { useSelector } from "react-redux";
 function App() {
-  const {user} = useSelector((state) => state.user)
-  const socket = io.connect('http://localhost:5000' , {
-    query: {user_id  : user?._id}
-  })
+  // const {user} = useSelector((state) => state.user)
+  // const socket = io.connect('http://localhost:5000' , {
+  //   query: {user_id  : user?._id}
+  // })
   return (
     <ChatProvider>
       <Paper>
         <Routes>
-          <Route
+          {/* <Route
             path="/login"
             element={
               <ProtectedRoute>
                 <Login />
               </ProtectedRoute>
             }
-          ></Route>
-          <Route path="/signup" element={<SignUp />}></Route>
+          ></Route> */}
+          {/* <Route path="/signup" element={<SignUp />}></Route> */}
           <Route
             path="/"
             element={
               <PublicRoute>
                 <DashboardRoute />
               </PublicRoute>
-            }
-          >
+            }>
             <Route
               path=""
               element={

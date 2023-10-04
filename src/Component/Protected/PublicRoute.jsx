@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useDispatch , useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../store/user";
 import { useEffect } from "react";
 export const PublicRoute = ({ children }) => {
@@ -31,7 +31,7 @@ export const PublicRoute = ({ children }) => {
         <Navigate to="/login" />;
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       alert(error);
     }
   };
@@ -40,7 +40,7 @@ export const PublicRoute = ({ children }) => {
     if (!user) {
       GetUser();
     }
-  }, [user, GetUser]);
+  });
   if (localStorage.getItem("token")) {
     return children;
   } else {
